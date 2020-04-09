@@ -1,0 +1,32 @@
+<div class="card my-5">
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search"  [(ngModel)]="term" autocomplete="off" placeholder="&#61442;  Start searching for an event by title or organizer">
+  </div>
+  <div class="card-body">
+
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Organizer</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Date Start</th>
+        <th scope="col">Date End</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of eventList | filter:term">
+        <td>{{ item.title }}</td>
+        <td>{{ item.organizer }}</td>
+        <td>{{ item.contact }}</td>
+        <td>{{ item.dateStart | date:'short' }}</td>
+        <td>{{ item.dateEnd | date:'short'}}</td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

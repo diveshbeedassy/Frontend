@@ -1,0 +1,81 @@
+<h4>CREATE EVENT</h4><hr>
+
+<div class="eventformpage row">
+
+  <div class="col">
+
+  <form class="form-group" [formGroup]="entryCreateForm" (ngSubmit)="onSubmit(entryCreateForm)" >
+
+    <div class="form-group">
+
+      <input type="text" class="form-control" placeholder="Event Title"  formControlName="title">
+    </div>
+    <ng-multiselect-dropdown
+      name="city"
+      [placeholder]="'Select interest'"
+      [data]="interest"
+      [disabled]="disabled"
+      [settings]="dropdownSettings"
+      (onSelect)="onItemSelect($event)">
+      </ng-multiselect-dropdown>
+
+    <div class="form-group">
+      <label class="col-4">Start Date</label>
+      <div class="col-8">
+        <input type="datetime-local" class="form-control"
+              formControlName="dateStart">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-4">End Date</label>
+      <div class="col-8">
+        <input type="datetime-local" class="form-control"
+              formControlName="dateEnd">
+      </div>
+
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Organizer Name" formControlName="organizer">
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder="Email Address" formControlName="email">
+    </div>
+    <div class="form-group">
+      <input type="tel" class="form-control" placeholder="Contact Number" formControlName="contact">
+    </div>
+
+
+     <!-- TEST -->
+    <!-- <div class="form-group">
+     <input type="number" class="form-control" placeholder="Id" formControlName="id"> -->
+      <!-- <input type="number" class="form-control" placeholder="User Id" formControlName="userId">
+      <input type="text" class="form-control" placeholder="Title" formControlName="title">
+      <input type="text" class="form-control" placeholder="Body" formControlName="body"> -->
+    <!-- </div> -->
+
+    <input type="submit" value="Post" class="btn btn-primary">
+
+  </form>
+  </div>
+
+<!--  <div class="sidecolumn col-sm-12 col-md-6">-->
+
+<!--&lt;!&ndash;    <ul *ngFor="let item of eventList; let i = index">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="card-body">&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.id}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.title}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.dateStart}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.dateEnd}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.organizer}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.email}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.contact}}</li>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        &lt;!&ndash; TEST &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; <li>{{item.userId}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.id}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.title}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>{{item.body}}</li> &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </ul>&ndash;&gt;-->
+<!--  </div>-->
+</div>
